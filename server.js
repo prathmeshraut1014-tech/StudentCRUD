@@ -8,12 +8,16 @@ dotenv.config();
 
 const app = express();
 
+// Middleware
 app.use(express.json());
 
+// Serve frontend files from public folder
 app.use(express.static("public"));
 
+// API routes
 app.use("/api", studentRoutes);
 
+// MongoDB connection
 mongoose
     .connect(process.env.MONGO_URI)
     .then(() => {
