@@ -18,8 +18,7 @@ app.use(express.static("public"));
 app.use("/api", studentRoutes);
 
 // MongoDB connection
-mongoose
-    .connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB Connected");
 
